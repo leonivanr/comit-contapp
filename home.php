@@ -14,40 +14,78 @@
 </head>
 
 <body>
+    <!-- //////////////////////////////////
+    /////////// CONTENIDO //////////////////
+    ////////////////////////////////////-->
     <div id="tab-wrap" class="container p-0">
-
+        <!-- //////////////////////////////////
+        /////////// INICIO //////////////////
+        ////////////////////////////////////-->
         <div id="tab-resumen" class="active">
-
+            <!-- TITULO -->
             <div class="row bg-success container m-0 pt-2">
                 <div class="col-12">
                     <h3 class="text-center">Balance</h3>
                 </div>
             </div>
+
             <div class="card m-1">
 
-            
-            <div class="row no-gutters">
-                <div class="col-4">
-                    <div class="card border-success">
-                        <div class="card-body text-center p-2">Ingreso <br>
-                            25
+                <div class="row no-gutters">
+
+                    <div class="col-4">
+                        <div class="card border-success">
+                            <div class="card-body text-center p-2">Ingreso <br>
+                                25
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-4">
-                    <div class="card">
-                        <div class="card-body">Balance</div>
+
+                    <div class="col-4">
+                        <div class="card">
+                            <div class="card-body">Balance</div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-4">
-                    <div class="card border-danger">
-                        <div class="card-body">Egreso</div>
+
+                    <div class="col-4">
+                        <div class="card border-danger">
+                            <div class="card-body">Egreso</div>
+                        </div>
                     </div>
+
                 </div>
 
             </div>
+
+            <form>
+            <select name="cars" class="custom-select w-50">
+                <option value="volvo">Egreso</option>
+                <option value="fiat">Ingreso</option>
+                <option value="audi">Transferir</option>
+            </select>
+            <div class="form-group w-50">
+                <input type="text" class="form-control" id="usr" placeholder="Monto">
+                <input type="text" class="form-control" id="usr" placeholder="Descripcion">
             </div>
+            <button type="button" class="btn">Añadir</button>
+            </form> 
+
+            <div class="card">
+                <div class="card-body d-flex justify-content-between">
+                   <span>
+                        Comida
+                   </span>
+                   <span class="align-self-end">
+                        $35
+                   </span>
+                </div>
+            </div>
+
+
         </div>
+        <!-- //////////////////////////////////
+        //////////  ESTADO     ///////////////
+        ////////////////////////////////////-->
 
         <div id="tab-estado">
             <div class="row bg-success container m-0 pt-2">
@@ -84,27 +122,34 @@
                 </div>
             </div>
         </div>
-
+        <!-- //////////////////////////////////
+        //////////  CUENTAS     ///////////////
+        ////////////////////////////////////-->
         <div id="tab-cuentas">
             <h1>CUENTAS</h1>
 
         </div>
-
+        <!-- //////////////////////////////////
+        //////////  PERFIL     ///////////////
+        ////////////////////////////////////-->
         <div id="tab-ajustes">
             <h1>AJUSTES</h1>
         </div>
     </div>
+
     <!-- //////////////////////////////////
-    //////////////NAV-BAR//////////////////
+    //////////  NAV-BAR     ///////////////
     ////////////////////////////////////-->
     <div id="nav-bar">
         <ul>
-            <li id="nav-resumen" class="active"><a  href="#tab-resumen"><i class="fas fa-tasks"></i></a></li>
+            <li id="nav-resumen"><a href="#tab-resumen" class="active"><i class="fas fa-tasks"></i></a></li>
             <li id="nav-estado"><a href="#tab-estado"><i class="fas fa-chart-bar"></i></a></li>
             <li id="nav-cuentas"><a href="#tab-cuentas"><i class="fas fa-wallet"></i></a></li>
             <li id="nav-ajustes"><a href="#tab-ajustes"><i class="fas fa-wrench"></i></a></li>
         </ul>
     </div>
+
+
     <!-- Librerias JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">

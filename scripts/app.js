@@ -3,10 +3,10 @@ $(()=>{
     $('#nav-bar a').click(function (e) {
         let aux = $(e.target);
         let proximaPagina = aux.parent()[0].hash;
-        let activeNav = aux.parents('li')[0];
+        let activeNav = aux.parents('a')[0];
         $('#tab-wrap .active').removeClass('active');
         $(proximaPagina).addClass('active');
-        $('#nav-bar li').removeClass('active');
+        $('#nav-bar a').removeClass('active');
         $(activeNav).addClass('active');
     })
 

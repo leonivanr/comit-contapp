@@ -17,7 +17,7 @@
 
     <div id="logreg-forms" class="col col-sm-5 col-md-5">
 
-        <form class="form-signin">
+        <form action="./actions/validarlogin.php" method="POST" class="form-signin">
             <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Conectarse </h1>
             <hr>
             <!-- =============  SOCIAL LOGIN  ================-->
@@ -30,8 +30,8 @@
             <hr>
             <!-- =============  EMAIL LOGIN  ================-->
 
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email" required="" autofocus="">
-            <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required="">
+            <input type="email" id="inputEmail" name="login-name" class="form-control" placeholder="User" required="" autofocus="">
+            <input type="password" id="inputPassword" name="login-pass" class="form-control" placeholder="Contraseña" required="">
 
             <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Entrar</button>
             <a href="#" id="forgot_pswd">Resetear Password</a>
@@ -50,7 +50,7 @@
         <!-- =============  REGISTRO ================-->
         <!--  -->
 
-        <form action="/signup/" class="form-signup">
+        <form action="./actions/registrarusuario.php" method="POST" class="form-signup">
             <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Registrarse </h1>
             <hr>
             <div class="social-login">
@@ -64,12 +64,12 @@
 
             <hr>
 
-            <input type="text" id="user-name" class="form-control" placeholder="Nombre" required="" autofocus="">
-            <input type="text" id="user-nickname" class="form-control" placeholder="Nombre de usuario" required=""
+            <input type="text" id="user-name" name="user-name" class="form-control" placeholder="Nombre" required="" autofocus="">
+            <input type="text" id="user-nickname" name="user-nickname" class="form-control" placeholder="Nombre de usuario" required=""
                 autofocus="">
-            <input type="email" id="user-email" class="form-control" placeholder="Email" required autofocus="">
-            <input type="password" id="user-pass" class="form-control" placeholder="Contraseña" required autofocus="">
-            <input type="password" id="user-repeatpass" class="form-control" placeholder="Repetir Contraseña" required
+            <input type="email" id="user-email" name="user-email" class="form-control" placeholder="Email" required autofocus="">
+            <input type="password" id="user-pass" name="user-pass" class="form-control" placeholder="Contraseña" required autofocus="">
+            <input type="password" id="user-repeatpass" name="user-repeatpass" class="form-control" placeholder="Repetir Contraseña" required
                 autofocus="">
 
             <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-user-plus"></i>

@@ -9,8 +9,32 @@ $(()=>{
         $('#nav-bar a').removeClass('active');
         $(activeNav).addClass('active');
     })
+    $('#add-btn').click(function () {
+        $('#tab-wrap .active').removeClass('active');
+        $('#tab-aniadir').addClass('active');
+    })
+    $('#agregar-btn').click(function () {
+        console.log($('#add-monto').val());
+        console.log($('#add-descripcion').val());
+        $('.detalles-wrap').append(
+            `<div class="card">
+                <div class="card-body d-flex justify-content-between">
+                    <span>`+
+                    $('#add-descripcion').val()
+                    
+                    +`
+                    </span>
+                    <span class="align-self-end">$
+                    `+
+                    $('#add-monto').val()
+                    +`
+                    </span>
+                </div>
+            </div>`
+        )
 
 
+    })
     // Login Register Form
     $('#logreg-forms #forgot_pswd').click(toggleResetPswd);
     $('#logreg-forms #cancel_reset').click(toggleResetPswd);

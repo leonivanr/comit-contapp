@@ -132,6 +132,24 @@ html,body {
     margin: 0 auto;
 }
 
+.float{
+	position:fixed;
+	width:15vw;
+	height:15vw;
+	color:white;
+	border-radius:100%;
+    text-align:center;
+	box-shadow: 2px 2px 3px #999;
+    background-color: green;
+	bottom:12%;
+	right:4%;
+}
+
+.my-float{
+    line-height: 15vw;
+}
+
+
 /* Mobile */
 
 @media screen and (max-width:500px){

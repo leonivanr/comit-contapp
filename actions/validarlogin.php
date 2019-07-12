@@ -1,25 +1,32 @@
 <?php 
     require('conexion.php');
+    //Mantengo la sesión iniciada.
+    session_start();
 
-    $username = $_REQUEST['login-name'];
+    $useremail = $_REQUEST['login-email'];
     $userpass = $_REQUEST['login-pass'];
 
-    $query = 'SELECT * FROM users WHERE useremail LIKE "' . $username . '"';
-
-    echo $query;
-
+    $query = 'SELECT * FROM users WHERE userEmail LIKE "' . $useremail . '" LIMIT 1';
+   
     $respuesta = mysqli_query($conexion, $query);
 
     $registro = mysqli_fetch_array($respuesta);
-
+    // Verifico coincidencia.
     $verify = password_verify($userpass,$registro['Password']);
 
     
     if ($verify) {
-        header('Location: /contapp/home.php');
+        //Igualo session y login.
+        $_SESSION["userEmail"] = $useremail;
+        $_SESSION["userId"] = $registro['userId'];
+        $_SESSION["userName"] = $registro['userName'];
+
+        header('Location: /home.php');
     }
     else {
-        header('Location: /contapp/login.php');
+
+        $_SESSION["mensaje"] = 'Datos incorrectos.';
+        header('Location: /login.php');
     }
 
 ?>

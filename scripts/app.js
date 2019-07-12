@@ -1,18 +1,9 @@
 
 $(()=>{
-    $('#nav-bar a').click(function (e) {
-        let aux = $(e.target);
-        let proximaPagina = aux.parent()[0].hash;
-        let activeNav = aux.parents('a')[0];
-        $('#tab-wrap .active').removeClass('active');
-        $(proximaPagina).addClass('active');
-        $('#nav-bar a').removeClass('active');
-        $(activeNav).addClass('active');
-    })
-    $('#add-btn').click(function () {
-        $('#tab-wrap .active').removeClass('active');
-        $('#tab-aniadir').addClass('active');
-    })
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+      });
     $('#agregar-btn').click(function () {
         console.log($('#add-monto').val());
         console.log($('#add-descripcion').val());
@@ -40,6 +31,12 @@ $(()=>{
     $('#logreg-forms #cancel_reset').click(toggleResetPswd);
     $('#logreg-forms #btn-signup').click(toggleSignUp);
     $('#logreg-forms #cancel_signup').click(toggleSignUp);
+
+    $('#user-pass, #user-repeatpass').on('keyup', function () {
+        if ($('#user-pass').val() == $('#user-repeatpass').val()) {
+            $('#register-btn').removeClass('disabled');
+        } 
+      });
 })
 
 

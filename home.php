@@ -283,17 +283,26 @@
                             <select id="registro-cat" name="registro-cat" class="form-control col-12" required autofocus>
                                 <option value="">Categoría</option>
                                 <optgroup label="Ingresos">
-                                  <option value="volvo">Volvo</option>
-                                  <option value="saab">Saab</option>
+                                  <option value="Interes">Interés</option>
+                                  <option value="Regalo">Regalo</option>
+                                  <option value="Salario">Salario</option>
+                                  <option value="Venta">Venta</option>
+                                  <option value="Otros">Otros</option>
                                 </optgroup>
                                 <optgroup label="Gastos">
-                                  <option value="mercedes">Mercedes</option>
-                                  <option value="audi">Audi</option>
+                                  <option value="Amistad">Amistad</option>
+                                  <option value="Comida">Comida</option>
+                                  <option value="Compras">Compras</option>
+                                  <option value="Educacion">Educación</option>
+                                  <option value="Facturas">Facturas</option>
+                                  <option value="Familia">Familia</option>
+                                  <option value="Inversion">Inversión</option>
+                                  <option value="Ocio">Ocio</option>
+                                  <option value="Salud">Salud</option>
+                                  <option value="Transporte">Transporte</option>
+                                  <option value="Viajes">Viajes</option>
+                                  <option value="Otros">Otros</option>
                                 </optgroup>
-                                <option value="Comida">Comida</option>
-                                <option value="Transporte">Transporte</option>
-                                <option value="Servicios">Servicios</option>
-                                <option value="Otros">Otros</option>
                             </select>
                         </div>
 

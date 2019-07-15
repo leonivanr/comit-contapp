@@ -18,10 +18,13 @@
 
 <body class="bg-success">
 
-    <div id="logreg-forms" class="col-12 col-sm-6 col-md-6 mt-5 shadow rounded">
-
+    <div id="logreg-forms" class="mt-5 col col-sm-6 col-md-4 col-lg-3 shadow rounded">
+        <div class="d-flex  justify-content-center">
+            <img id="login-img" src="assets/img/wallet-center.png" alt="" class="rounded-circle shadow-sm">
+        </div>
         <form action="./actions/validarlogin.php" method="POST" class="form-signin">
-            <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Conectarse </h1>
+            <hr class="mt-5">
+            <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Bienvenido! </h1>
             <hr>
             <!-- =============  SOCIAL LOGIN  ================-->
             <!--<div class="social-login">
@@ -53,11 +56,11 @@
                 }
             ?>
             
-            <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Entrar</button>
+            <button class="btn btn-success btn-block shadow-sm" type="submit"><i class="fas fa-sign-in-alt"></i> Entrar</button>
             <!--<a href="#" id="forgot_pswd">Resetear Password</a>-->
             <hr>
 
-            <button class="btn btn-primary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i>
+            <button class="btn btn-light btn-block border border-primary text-primary" type="button" id="btn-signup"><i class="fas fa-user-plus"></i>
                 Registrarse</button>
         </form>
 
@@ -71,9 +74,9 @@
         <!--  -->
 
         <form action="./actions/registrarusuario.php" method="POST" class="form-signup">
+            <hr class="mt-5">
             <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Registrarse </h1>
-            <!--
-            <hr>
+                <!--
             <div class="social-login">
                 <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i>
                         Facebook</span> </button>
@@ -114,7 +117,8 @@
             </div>
             <button id="register-btn" class="btn btn-primary btn-block disabled" type="submit"><i class="fas fa-user-plus"></i>
                 Registrarse</button>
-            <a href="#" id="cancel_signup"><i class="fas fa-angle-left"></i> Atrás</a>
+            <hr>
+            <a href="#" id="cancel_signup" class="text-primary"><i class="fas fa-angle-left"></i> Atrás</a>
         </form>
         <br>
 

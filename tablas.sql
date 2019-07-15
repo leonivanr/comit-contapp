@@ -9,14 +9,18 @@ CREATE TABLE IF NOT EXISTS users (
 CREATE TABLE IF NOT EXISTS registros (
     registroId INT AUTO_INCREMENT,
     userId INT NOT NULL,
-    descripcion VARCHAR(255),
-    monto VARCHAR(255),
+    tipo VARCHAR(255) NOT NULL,
+    monto VARCHAR(255) NOT NULL,
+    descripcion VARCHAR(255) NOT NULL,
     categoria  VARCHAR(25) NOT NULL,
-    fecha DATETIME NOT NULL,
+    fechaCreacionReg DATETIME NOT NULL,
+    fechaRegistro DATETIME NOT NULL,
     nota VARCHAR(255),
     PRIMARY KEY (registroId),
     FOREIGN KEY (userId) REFERENCES users(userId)
 );
+
+/* FALTA VERIFICAR */
 
 CREATE TABLE IF NOT EXISTS cuentas (
     cuentaId INT NOT NULL AUTO_INCREMENT,
@@ -32,4 +36,3 @@ CREATE TABLE IF NOT EXISTS grupos (
     FOREIGN KEY (userIdA) REFERENCES users(userId),
     FOREIGN KEY (userIdB) REFERENCES users(userId)
 )
-

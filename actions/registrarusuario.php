@@ -8,7 +8,7 @@
     // Recordar que los nombres se obtienen de los campos con attributo "name", no por el "id". 
     $userName = $_REQUEST['user-name'];
     $userEmail = $_REQUEST['user-email'];
-    $userPassword = $_REQUEST['user-pass'];
+    $userPassword = $_REQUEST['userpass'];
 
     // Encripto el password. 
     $hash = password_hash($userPassword, PASSWORD_BCRYPT);

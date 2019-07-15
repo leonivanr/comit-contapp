@@ -50,10 +50,12 @@
             </div>
             <?php
                 if (isset($_SESSION['mensaje'])) {
-                   echo '<div class="alert alert-danger mt-3">'
+                   echo '<div class="alert alert-danger alert-dismissible mt-3">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>'
                             . $_SESSION['mensaje'] .
                         '</div>';
                 }
+                unset($_SESSION['mensaje']);
             ?>
             
             <button class="btn btn-success btn-block shadow-sm" type="submit"><i class="fas fa-sign-in-alt"></i> Entrar</button>
@@ -64,16 +66,17 @@
                 Registrarse</button>
         </form>
 
-        <form action="/reset/password/" class="form-reset">
+<!--         <form action="/reset/password/" class="form-reset">
             <input type="email" id="resetEmail" class="form-control" placeholder="Email" required="" autofocus="">
             <button class="btn btn-primary btn-block" type="submit">Resetear</button>
             <a href="#" id="cancel_reset"><i class="fas fa-angle-left"></i> Atrás</a>
-        </form>
+        </form> -->
 
         <!-- =============  REGISTRO ================-->
         <!--  -->
 
-        <form action="./actions/registrarusuario.php" method="POST" class="form-signup">
+        <form action="./actions/registrarusuario.php" method="POST" class="form-signup needs-validation" 
+        oninput='userrepeatpass.setCustomValidity(userrepeatpass.value != userpass.value ? "Contraseñas no coinciden." : "")'>
             <hr class="mt-5">
             <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Registrarse </h1>
                 <!--
@@ -87,47 +90,59 @@
             </div>
             -->
             <hr>
-
+            <!-- Nombre -->
             <div class="input-group mb-1">
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fas fa-user-alt"></i></span>
                 </div>    
-                <input type="text" id="user-name" name="user-name" class="form-control" placeholder="Nombre" required="" autofocus="">
+                <input type="text" id="user-name" name="user-name" class="form-control" placeholder="Nombre" required autofocus>
+                <div class="valid-feedback">Válido.</div>
+                <div class="invalid-feedback">Rellene este campo.</div>
             </div>
-
+            <!-- Email -->
             <div class="input-group mb-1">
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="far fa-envelope"></i></span>
                 </div>
-                <input type="email" id="user-email" name="user-email" class="form-control" placeholder="Email" required autofocus="">
+                <input type="email" id="user-email" name="user-email" class="form-control" placeholder="Email" required autofocus>
+                <div class="valid-feedback">Válido.</div>
+                <div class="invalid-feedback">Ingrese un correo válido.</div>
             </div>
-
+            <!-- PWD -->
             <div class="input-group mb-1">
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fas fa-key"></i></span>
                 </div>
-                <input type="password" id="user-pass" name="user-pass" class="form-control" placeholder="Contraseña" required autofocus="">
+                <input type="password" id="user-pass" name="userpass" class="form-control" placeholder="Contraseña" required autofocus>
+                <div class="valid-feedback">Válido.</div>
+                <div class="invalid-feedback">Rellene este campo.</div>
             </div>
+            <!-- Confirmar PWD -->
             <div class="input-group mb-1">
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fas fa-redo-alt"></i></span>
                 </div>
-                <input type="password" id="user-repeatpass" name="user-repeatpass" class="form-control" placeholder="Repetir Contraseña" required
-                autofocus="">
+                <input type="password" id="user-repeatpass" name="userrepeatpass" class="form-control" placeholder="Repetir Contraseña" required autofocus >
+                <div class="valid-feedback">Válido.</div>
+                <div class="invalid-feedback">Rellene este campo.</div>
             </div>
-            <button id="register-btn" class="btn btn-primary btn-block disabled" type="submit"><i class="fas fa-user-plus"></i>
+
+            <button id="register-btn" class="btn btn-primary btn-block shadow-sm" type="submit"><i class="fas fa-user-plus"></i>
                 Registrarse</button>
             <hr>
             <a href="#" id="cancel_signup" class="text-primary"><i class="fas fa-angle-left"></i> Atrás</a>
         </form>
+
         <br>
 
     </div>
+
 
     <!-- Librerias JS -->
     <script src="scripts/jquery-3.4.1.min.js"></script>
     <script src="scripts/bootstrap.bundle.min.js"></script>
     <script src="scripts/app.js"></script>
+
 </body>
 
 </html>

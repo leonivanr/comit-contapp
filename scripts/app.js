@@ -112,12 +112,7 @@ $(() => {
     $('#logreg-forms #btn-signup').click(toggleSignUp);
     $('#logreg-forms #cancel_signup').click(toggleSignUp);
 
-    // Validación contraseña.
-    $('#user-pass, #user-repeatpass').on('keyup', function () {
-        if ($('#user-pass').val() == $('#user-repeatpass').val()) {
-            $('#register-btn').removeClass('disabled');
-        }
-    });
+
     // function toggleResetPswd(e){
     //     e.preventDefault();
     //     $('#logreg-forms .form-signin').toggle() // display:block or none

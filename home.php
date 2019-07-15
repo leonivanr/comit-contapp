@@ -8,7 +8,7 @@
               INNER JOIN users u
               ON r.userId = u.userId 
               WHERE r.userId = " . $_SESSION['userId'] . "
-              ORDER BY r.fechaRegistro DESC";
+              ORDER BY r.fechaRegistro DESC, r.fechaCreacionReg DESC";
 
     $queryIngresos =   "SELECT SUM(monto) AS sumaing
                         FROM registros r
@@ -114,11 +114,12 @@
                     <div class="col-6 card">
                         <div class="card-body text-center py-1">
                           <p class="card-text mb-1">Ingresos</p>
-                          <h4 class="text-success">$ 
-                          <?php     
-
-                          echo $sumaIngresos['sumaing'];
-
+                          <?php 
+                          if ($sumaIngresos['sumaing'] == '') {
+                            echo '<h4>$ 0';
+                          } else {
+                            echo '<h4 class="text-success">$ ' . $sumaIngresos['sumaing'];
+                          }
                           ?>
                           </h4>
                         </div>
@@ -129,11 +130,12 @@
                     <div class="col-6 card">
                         <div class="card-body text-center py-1">
                           <p class="card-text  mb-1">Gastos</p>
-                          <h4 class="text-danger">$ 
-                          <?php     
-
-                          echo $sumaGastos['sumagas'];
-
+                          <?php 
+                          if ($sumaGastos['sumagas'] == '') {
+                            echo '<h4>$ 0';
+                          } else {
+                            echo '<h4 class="text-danger">$ ' . $sumaGastos['sumagas'];
+                          }
                           ?>
                           </h4>
                         </div>
@@ -146,14 +148,12 @@
               </div>
 
             </div>
+      
                   <!-- CUADRO DE REGISTROS -->
             <div class="card shadow-sm mt-3">
 
               <div class="card-body p-1">
-              
-                <h3 class="mx-3 my-3">Ultimos registros:
 
-                </h3>
                 <!-- EJEMPLOS REGISTROS -->        
                 <div id="reg-container">
                 <?php
@@ -244,6 +244,7 @@
                     </div>
 
                   </div>
+
                 <?php 
                   }
                 ?>    
@@ -281,6 +282,14 @@
                         <div class="form-group col-sm-4 p-0">
                             <select id="registro-cat" name="registro-cat" class="form-control col-12" required autofocus>
                                 <option value="">Categoría</option>
+                                <optgroup label="Ingresos">
+                                  <option value="volvo">Volvo</option>
+                                  <option value="saab">Saab</option>
+                                </optgroup>
+                                <optgroup label="Gastos">
+                                  <option value="mercedes">Mercedes</option>
+                                  <option value="audi">Audi</option>
+                                </optgroup>
                                 <option value="Comida">Comida</option>
                                 <option value="Transporte">Transporte</option>
                                 <option value="Servicios">Servicios</option>
@@ -307,7 +316,7 @@
 
                     <!-- Botones Añadir -->
                     <div class="d-flex justify-content-end mt-sm-3">
-                    <button type="button" class="btn btn-outline-danger mr-2 d-none d-lg-block">Cancelar</button>
+                    <button type="reset" class="btn btn-outline-danger mr-2">Limpiar</button>
                     <button type="submit" id="registro-anadir"class="btn btn-success">Añadir</button>
                     
                     </div>

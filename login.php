@@ -58,24 +58,31 @@
                 unset($_SESSION['mensaje']);
             ?>
             
-            <button class="btn btn-success btn-block shadow-sm" type="submit"><i class="fas fa-sign-in-alt"></i> Entrar</button>
-            <!--<a href="#" id="forgot_pswd">Resetear Password</a>-->
-            <hr>
 
+            <button class="btn btn-success btn-block shadow" type="submit"><i class="fas fa-sign-in-alt"></i> Entrar</button>
+            <a href="#" id="forgot_pswd" class="mt-1">Olvidé mi contraseña.</a>
+            <hr>
+            <div class="text-center">
+                <h6 class="mb-3">No tenés cuenta? </h6>
+            </div>
             <button class="btn btn-light btn-block border border-primary text-primary" type="button" id="btn-signup"><i class="fas fa-user-plus"></i>
                 Registrarse</button>
         </form>
-
-<!--         <form action="/reset/password/" class="form-reset">
-            <input type="email" id="resetEmail" class="form-control" placeholder="Email" required="" autofocus="">
-            <button class="btn btn-primary btn-block" type="submit">Resetear</button>
+         <!-- =============  RECUPERAR CONTRASEÑA  ================-->       
+        <form action="./actions/reset-request.php" class="form-reset mt-5" method="POST">
+            <div class="input-group mb-1">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="far fa-envelope"></i></span>
+                    </div>
+                    <input type="email" id="inputEmail" name="recoverpassemail" class="form-control m-0" placeholder="Email" required="">
+            </div>
+            <button class="btn btn-primary btn-block" type="submit" name="reset-req-sub">Resetear</button>
             <a href="#" id="cancel_reset"><i class="fas fa-angle-left"></i> Atrás</a>
-        </form> -->
+        </form>
 
         <!-- =============  REGISTRO ================-->
-        <!--  -->
-
-        <form action="./actions/registrarusuario.php" method="POST" class="form-signup needs-validation" 
+                
+        <form action="./actions/registrarusuario.php" method="POST" class="form-signup" 
         oninput='userrepeatpass.setCustomValidity(userrepeatpass.value != userpass.value ? "Contraseñas no coinciden." : "")'>
             <hr class="mt-5">
             <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Registrarse </h1>

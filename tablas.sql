@@ -20,6 +20,14 @@ CREATE TABLE IF NOT EXISTS registros (
     FOREIGN KEY (userId) REFERENCES users(userId)
 );
 
+CREATE TABLE IF NOT EXISTS passreset (
+    passResetId int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    passResetEmail TEXT NOT NULL,
+    passResetSelector  TEXT NOT NULL,
+    passResetToken LONGTEXT NOT NULL,
+    passResetExpira TEXT NOT NULL
+);
+
 /* FALTA VERIFICAR */
 
 CREATE TABLE IF NOT EXISTS cuentas (
@@ -35,4 +43,6 @@ CREATE TABLE IF NOT EXISTS grupos (
     userIdB INT,
     FOREIGN KEY (userIdA) REFERENCES users(userId),
     FOREIGN KEY (userIdB) REFERENCES users(userId)
-)
+);
+
+
